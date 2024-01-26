@@ -40,7 +40,7 @@ public class JwtService {
                 .builder()
                 .claims(data)
                 .expiration(ExpirationToken())
-                .signWith(genereteSign())
+                .signWith(generateSign())
                 .compact();
     }
 
@@ -48,7 +48,7 @@ public class JwtService {
         var accessToken = extractToken(token);
 
         try {
-            Jwts.parser().verifyWith(genereteSign()).build().parseSignedClaims(accessToken).getPayload();
+            Jwts.parser().verifyWith(generateSign()).build().parseSignedClaims(accessToken).getPayload();
 
         } catch (Exception ex) {
             throw new AuthenticationException("Invalid token " + ex.getMessage());
@@ -61,11 +61,6 @@ public class JwtService {
                         .atZone(ZoneId.systemDefault()).toInstant()
         );
     }
-
-    private SecretKey genereteSign() {
-        return Keys.hmacShaKeyFor(secretKey.getBytes());
-    }
-
     private String extractToken(String token) {
         if (token.isEmpty()) {
             throw new ValidationException("The access token was not informed");
@@ -74,5 +69,8 @@ public class JwtService {
             return token.split(empty_space)[token_index]; // pegando os tokens no formato Bearer token
         }
         return token;
+    }
+    private SecretKey generateSign() {
+        return Keys.hmacShaKeyFor(secretKey.getBytes());
     }
 }

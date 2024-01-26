@@ -3,7 +3,7 @@ server:
 
 app:
   token:
-    secret-key: ${JWT_SECRET_KEY:bWluaGFzZWNyZXRyYW5kb20=}
+    secret-key: ${JWT_SECRET_KEY:Y3Vyc28tYXV0ZW50aWNhY2FvLWF1dG9yaXphY2FvLXNwcmluZw==} #Criada pelo site base64
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver

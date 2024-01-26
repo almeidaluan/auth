@@ -1,2 +1,2 @@
-INSERT INTO public.user(id,username,password) values(1,'user.teste','$2y$10$N9.hLL6eq3srcWRp8kG9A.2.an9fMPyfXxFHJsCoe6joPA9yczwsO')
-    INSERT INTO public.user(id,username,password) values(2,'user.new.teste','$2y$10$N9.hLL6eq3srcWRp8kG9A.2.an9fMPyfXxFHJsCoe6joPA9yczwsO')
+INSERT INTO public.user(id,username,password) values(1,'user.teste','$2a$10$FBOM5C.hPi54g2k0rZ1Jq.A0LMqLwttWeGpIr624LDiM5s8VALf92')
+    INSERT INTO public.user(id,username,password) values(2,'user.new.teste','$2a$10$FBOM5C.hPi54g2k0rZ1Jq.A0LMqLwttWeGpIr624LDiM5s8VALf92')

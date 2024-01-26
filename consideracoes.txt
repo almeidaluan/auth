@@ -1,0 +1,6 @@
+docker image build -t stateless-auth-api . # Criando imagem com o nome da aplicacao
+
+ docker container run --name stateless-auth-api -p 8080:8080 --network bridge -e "DB_HOST=stateless-auth-db" -e "DB_PORT=5432" -e "DB_NAME=auth-db" -e "PORT=8080" stateless-auth-api # utilizando imagem criada do sistema para gerar o container apontando para o banco de dados
+
+1- senha inserida na base bcryptada(site online)
+2- senha da secret key do properties criptada base64
